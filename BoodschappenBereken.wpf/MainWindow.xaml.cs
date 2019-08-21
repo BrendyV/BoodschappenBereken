@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Boodschappen.Lib.Entities;
+
 
 namespace BoodschappenBereken.wpf
 {
@@ -23,6 +25,20 @@ namespace BoodschappenBereken.wpf
         public MainWindow()
         {
             InitializeComponent();
+            
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            VulCombo();
+        }
+
+        void VulCombo()
+        {
+            cmbAfdeling.ItemsSource = Enum.GetValues(typeof(Afdelingen));
+            cmbStukOfKg.ItemsSource = Enum.GetValues(typeof(StukOfKg));
+        }
+
+
     }
 }
