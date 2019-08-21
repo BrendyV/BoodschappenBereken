@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.779
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoodschappenBereken.wpf", "BoodschappenBereken.wpf\BoodschappenBereken.wpf.csproj", "{17316BD0-787B-4383-BED9-B9A00BEE189B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boodschappen.Lib", "Boodschappen.Lib\Boodschappen.Lib.csproj", "{4A082343-22F1-4D8E-9D50-B07686DE1FBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{17316BD0-787B-4383-BED9-B9A00BEE189B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17316BD0-787B-4383-BED9-B9A00BEE189B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17316BD0-787B-4383-BED9-B9A00BEE189B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A082343-22F1-4D8E-9D50-B07686DE1FBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A082343-22F1-4D8E-9D50-B07686DE1FBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A082343-22F1-4D8E-9D50-B07686DE1FBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A082343-22F1-4D8E-9D50-B07686DE1FBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

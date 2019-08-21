@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{17316BD0-787B-4383-BED9-B9A00BEE189B}</ProjectGuid>
+    <ProjectGuid>{4A082343-22F1-4D8E-9D50-B07686DE1FBA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>BoodschappenBereken.wpf</RootNamespace>
-    <AssemblyName>BoodschappenBereken.wpf</AssemblyName>
+    <RootNamespace>Boodschappen.Lib</RootNamespace>
+    <AssemblyName>Boodschappen.Lib</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -95,10 +95,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Boodschappen.Lib\Boodschappen.Lib.csproj">
-      <Project>{4a082343-22f1-4d8e-9d50-b07686de1fba}</Project>
-      <Name>Boodschappen.Lib</Name>
-    </ProjectReference>
+    <Folder Include="Entities\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
