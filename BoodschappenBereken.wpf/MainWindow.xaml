@@ -19,9 +19,9 @@
         <Label Content="Per stuk / kg :" HorizontalAlignment="Left" Margin="240,106,0,0" VerticalAlignment="Top" Width="135"/>
         <Label Content="Prijs per stuk / kg :" HorizontalAlignment="Left" Margin="240,136,0,0" VerticalAlignment="Top" Width="135"/>
         <Label Content="Totale prijs product :" HorizontalAlignment="Left" Margin="240,167,0,0" VerticalAlignment="Top" Width="145"/>
-        <Button x:Name="btnToevoegen" Content="Toevoegen" HorizontalAlignment="Left" Margin="240,226,0,0" VerticalAlignment="Top" Width="80"/>
-        <Button x:Name="btnNieuw" Content="Nieuw" HorizontalAlignment="Left" Margin="340,226,0,0" VerticalAlignment="Top" Width="80"/>
-        <Button x:Name="btnVerwijderen" Content="Verwijderen" HorizontalAlignment="Left" Margin="435,226,0,0" VerticalAlignment="Top" Width="80"/>
+        <Button x:Name="btnToevoegen" Content="Toevoegen" HorizontalAlignment="Left" Margin="240,226,0,0" VerticalAlignment="Top" Width="80" Click="BtnToevoegen_Click"/>
+        <Button x:Name="btnNieuw" Content="Nieuw" HorizontalAlignment="Left" Margin="340,226,0,0" VerticalAlignment="Top" Width="80" Click="BtnNieuw_Click"/>
+        <Button x:Name="btnVerwijderen" Content="Verwijderen" HorizontalAlignment="Left" Margin="435,226,0,0" VerticalAlignment="Top" Width="80" Click="BtnVerwijderen_Click"/>
         <Label Content="Aantal stuks of gewicht :" HorizontalAlignment="Left" Margin="240,75,0,0" VerticalAlignment="Top" Width="145"/>
 
     </Grid>

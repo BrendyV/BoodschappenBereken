@@ -10,13 +10,13 @@ namespace Boodschappen.Lib.Entities
     public class KenmerkenProduct
     {
         public string ProductNaam { get; set; }
-        public string Afdeling { get; set; }
+        public Afdelingen Afdeling { get; set; }
         public int Aantal { get; set; }
-        public string StukOfGewicht { get; set; }
+        public StukOfKg StukOfGewicht { get; set; }
         public int Prijs { get; set; }
         public int Totaal { get; set; }
 
-        public KenmerkenProduct (string productNaam, string afdeling, int aantal, string stukOfGewicht, int prijs, int totaal)
+        public KenmerkenProduct (string productNaam, Afdelingen afdeling, int aantal, StukOfKg stukOfGewicht, int prijs, int totaal)
         {
             ProductNaam = productNaam;
             Afdeling = afdeling;
@@ -28,7 +28,7 @@ namespace Boodschappen.Lib.Entities
 
         public override string ToString()
         {
-            return $"{ProductNaam} aantal :{Aantal}";
+            return $"{ProductNaam} Aantal : {Aantal}";
         
         }
     }

@@ -62,7 +62,7 @@
     <Compile Include="Entities\Afdelingen.cs" />
     <Compile Include="Entities\KenmerkenProduct.cs" />
     <Compile Include="Entities\StukOfKg.cs" />
-    <Compile Include="Services\KenmerkenProduct.cs" />
+    <Compile Include="Services\BeherenBoodschappenServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
