@@ -27,6 +27,8 @@ namespace BoodschappenBereken.wpf
         KenmerkenProduct geselecteerdProduct;
         BeherenBoodschappenServices productBeheer;
 
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -72,6 +74,8 @@ namespace BoodschappenBereken.wpf
             return kenmerken;
         }
 
+
+
         void VulLijstAan ()
         {
             lstBoodschappenLijst.ItemsSource = BeherenBoodschappenServices.KenmerkenProducts; //Maken dat in de class static erbij staat. Anders wil hij het nemen
@@ -96,7 +100,7 @@ namespace BoodschappenBereken.wpf
             cmbAfdeling.SelectedItem = geselecteerdProduct.Afdeling;
             txtAantal.Text = geselecteerdProduct.Aantal.ToString();
             cmbStukOfKg.SelectedItem = geselecteerdProduct.StukOfGewicht;
-            txtPrijsStukOfKg.Text = geselecteerdProduct.Prijs.ToString();
+            txtPrijsStukOfKg.Text = geselecteerdProduct.PrijsPerStuk.ToString();
             lblTotalePrijs.Content = geselecteerdProduct.Totaal.ToString();
         }
 
@@ -105,7 +109,8 @@ namespace BoodschappenBereken.wpf
             KenmerkenProduct kenmerken = InputGevenGui();
             beherenBoodschappenServices.SlaOp(geselecteerdProduct, kenmerken);
             MaakVeldenLeeg();
-            
+            VulLijstAan();
+
         }
 
         private void BtnNieuw_Click(object sender, RoutedEventArgs e)
@@ -137,13 +142,14 @@ namespace BoodschappenBereken.wpf
         {
             int aantal;
             int prijsPerStuk;
-            int prijsTotaal;
+            int totalePrijs;
 
             aantal = int.Parse(txtAantal.Text.ToString());
-            prijsPerStuk = int.Parse(txtPrijsStukOfKg.Text);
-            prijsTotaal = int.Parse(lblTotalePrijs.Content.ToString()); // wilt niet in de label komen
+            prijsPerStuk = int.Parse(txtPrijsStukOfKg.Text.ToString());
+            
+            totalePrijs = aantal * prijsPerStuk;
 
-            prijsTotaal = aantal * prijsPerStuk;
+            lblTotalePrijs.Content = totalePrijs;
         }
         
     }

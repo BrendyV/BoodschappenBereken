@@ -13,16 +13,16 @@ namespace Boodschappen.Lib.Entities
         public Afdelingen Afdeling { get; set; }
         public int Aantal { get; set; }
         public StukOfKg StukOfGewicht { get; set; }
-        public int Prijs { get; set; }
+        public int PrijsPerStuk { get; set; }
         public int Totaal { get; set; }
 
-        public KenmerkenProduct (string productNaam, Afdelingen afdeling, int aantal, StukOfKg stukOfGewicht, int prijs, int totalePrijs)
+        public KenmerkenProduct (string productNaam, Afdelingen afdeling, int aantal, StukOfKg stukOfGewicht, int prijsPerStuk, int totalePrijs)
         {
             ProductNaam = productNaam;
             Afdeling = afdeling;
             Aantal = aantal;
             StukOfGewicht = stukOfGewicht;
-            Prijs = prijs;
+            PrijsPerStuk = prijsPerStuk;
             Totaal = totalePrijs;
         }
 
