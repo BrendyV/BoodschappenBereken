@@ -38,6 +38,17 @@ namespace BoodschappenBereken.wpf
         {
             VulCombo();
             VulLijstAan();
+            InvullenBijLaden();
+        }
+
+        void InvullenBijLaden ()
+        {
+            txtProduct.Text = "melk";
+            cmbAfdeling.SelectedIndex = 1;
+            txtAantal.Text = "10";
+            cmbStukOfKg.SelectedIndex = 1;
+            txtPrijsStukOfKg.Text = "1";
+            
         }
 
         void VulCombo()
@@ -52,18 +63,18 @@ namespace BoodschappenBereken.wpf
             Afdelingen afdeling = (Afdelingen)cmbAfdeling.SelectedItem;
             int aantal = int.Parse(txtAantal.Text.ToString());
             StukOfKg stukOfKg = (StukOfKg)cmbStukOfKg.SelectedItem;
-            int prijs = int.Parse(txtPrijsStukOfKg.Text.ToString());
-            int totaal = int.Parse(txtTotalePrijs.Text.ToString());
+            int prijs = int.Parse(txtAantal.Text.ToString());
+            int totalePrijs = int.Parse(lblTotalePrijs.Content.ToString());
 
             KenmerkenProduct kenmerken = new KenmerkenProduct
-                (productNaam, afdeling, aantal, stukOfKg, prijs, totaal);
+                (productNaam, afdeling, aantal, stukOfKg, prijs, totalePrijs);
 
             return kenmerken;
         }
 
         void VulLijstAan ()
         {
-            lstBoodschappenLijst.ItemsSource = BeherenBoodschappenServices.KenmerkenProducts; //Maken dat in de class staic erbij staat. Anders wil hij het nemen
+            lstBoodschappenLijst.ItemsSource = BeherenBoodschappenServices.KenmerkenProducts; //Maken dat in de class static erbij staat. Anders wil hij het nemen
             lstBoodschappenLijst.Items.Refresh();
         }
 
@@ -75,7 +86,7 @@ namespace BoodschappenBereken.wpf
             txtAantal.Clear();
             cmbStukOfKg.SelectedIndex = -1;
             txtPrijsStukOfKg.Clear();
-            txtTotalePrijs.Clear();
+            lblTotalePrijs.Content = 0;
             VulLijstAan();
         }
 
@@ -86,7 +97,7 @@ namespace BoodschappenBereken.wpf
             txtAantal.Text = geselecteerdProduct.Aantal.ToString();
             cmbStukOfKg.SelectedItem = geselecteerdProduct.StukOfGewicht;
             txtPrijsStukOfKg.Text = geselecteerdProduct.Prijs.ToString();
-            txtTotalePrijs.Text = geselecteerdProduct.Totaal.ToString();
+            lblTotalePrijs.Content = geselecteerdProduct.Totaal.ToString();
         }
 
         private void BtnToevoegen_Click(object sender, RoutedEventArgs e)
@@ -94,6 +105,7 @@ namespace BoodschappenBereken.wpf
             KenmerkenProduct kenmerken = InputGevenGui();
             beherenBoodschappenServices.SlaOp(geselecteerdProduct, kenmerken);
             MaakVeldenLeeg();
+            
         }
 
         private void BtnNieuw_Click(object sender, RoutedEventArgs e)
@@ -107,5 +119,32 @@ namespace BoodschappenBereken.wpf
             productBeheer.Verwijder(geselecteerdProduct);
             MaakVeldenLeeg();
         }
+
+        private void LstBoodschappenLijst_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (lstBoodschappenLijst.SelectedIndex >= 0)
+            {
+                geselecteerdProduct = (KenmerkenProduct)lstBoodschappenLijst.SelectedItem;
+                ToonDetails();
+            }
+            else
+            {
+                geselecteerdProduct = null;
+            }
+        }
+
+        private void BtnBerekenen_Click(object sender, RoutedEventArgs e)
+        {
+            int aantal;
+            int prijsPerStuk;
+            int prijsTotaal;
+
+            aantal = int.Parse(txtAantal.Text.ToString());
+            prijsPerStuk = int.Parse(txtPrijsStukOfKg.Text);
+            prijsTotaal = int.Parse(lblTotalePrijs.Content.ToString()); // wilt niet in de label komen
+
+            prijsTotaal = aantal * prijsPerStuk;
+        }
+        
     }
 }

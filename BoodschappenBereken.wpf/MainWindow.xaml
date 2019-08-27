@@ -7,13 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <ListBox x:Name="lstBoodschappenLijst" HorizontalAlignment="Left" Height="385" Margin="10,10,0,0" VerticalAlignment="Top" Width="190"/>
+        <ListBox x:Name="lstBoodschappenLijst" HorizontalAlignment="Left" Height="385" Margin="10,10,0,0" VerticalAlignment="Top" Width="190" SelectionChanged="LstBoodschappenLijst_SelectionChanged"/>
         <TextBox x:Name="txtProduct" HorizontalAlignment="Left" Height="26" Margin="390,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
         <ComboBox x:Name="cmbAfdeling" HorizontalAlignment="Left" Margin="390,44,0,0" VerticalAlignment="Top" Width="110" Height="26"/>
         <TextBox x:Name="txtAantal" HorizontalAlignment="Left" Height="26" Margin="390,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
         <ComboBox x:Name="cmbStukOfKg" HorizontalAlignment="Left" Margin="390,106,0,0" VerticalAlignment="Top" Width="110" Height="26"/>
         <TextBox x:Name="txtPrijsStukOfKg" HorizontalAlignment="Left" Height="25" Margin="390,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
-        <TextBox x:Name="txtTotalePrijs" HorizontalAlignment="Left" Height="26" Margin="390,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
         <Label Content="Product :" HorizontalAlignment="Left" Margin="240,13,0,0" VerticalAlignment="Top" Width="135"/>
         <Label Content="Afdeling :" HorizontalAlignment="Left" Margin="240,44,0,0" VerticalAlignment="Top" Width="145"/>
         <Label Content="Per stuk / kg :" HorizontalAlignment="Left" Margin="240,106,0,0" VerticalAlignment="Top" Width="135"/>
@@ -23,6 +22,8 @@
         <Button x:Name="btnNieuw" Content="Nieuw" HorizontalAlignment="Left" Margin="340,226,0,0" VerticalAlignment="Top" Width="80" Click="BtnNieuw_Click"/>
         <Button x:Name="btnVerwijderen" Content="Verwijderen" HorizontalAlignment="Left" Margin="435,226,0,0" VerticalAlignment="Top" Width="80" Click="BtnVerwijderen_Click"/>
         <Label Content="Aantal stuks of gewicht :" HorizontalAlignment="Left" Margin="240,75,0,0" VerticalAlignment="Top" Width="145"/>
+        <Button x:Name="btnBerekenen" Content="Berekenen" HorizontalAlignment="Left" Margin="535,167,0,0" VerticalAlignment="Top" Width="75" Height="26" Click="BtnBerekenen_Click" />
+        <Label x:Name="lblTotalePrijs" Content="" HorizontalAlignment="Left" Margin="390,167,0,0" VerticalAlignment="Top" Width="110"/>
 
     </Grid>
 </Window>

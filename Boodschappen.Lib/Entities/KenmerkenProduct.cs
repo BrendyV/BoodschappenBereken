@@ -16,14 +16,14 @@ namespace Boodschappen.Lib.Entities
         public int Prijs { get; set; }
         public int Totaal { get; set; }
 
-        public KenmerkenProduct (string productNaam, Afdelingen afdeling, int aantal, StukOfKg stukOfGewicht, int prijs, int totaal)
+        public KenmerkenProduct (string productNaam, Afdelingen afdeling, int aantal, StukOfKg stukOfGewicht, int prijs, int totalePrijs)
         {
             ProductNaam = productNaam;
             Afdeling = afdeling;
             Aantal = aantal;
             StukOfGewicht = stukOfGewicht;
             Prijs = prijs;
-            Totaal = totaal;
+            Totaal = totalePrijs;
         }
 
         public override string ToString()
