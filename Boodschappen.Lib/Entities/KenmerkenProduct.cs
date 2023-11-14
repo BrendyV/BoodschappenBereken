@@ -11,12 +11,12 @@ namespace Boodschappen.Lib.Entities
     {
         public string ProductNaam { get; set; }
         public Afdelingen Afdeling { get; set; }
-        public int Aantal { get; set; }
+        public decimal Aantal { get; set; }
         public StukOfKg StukOfGewicht { get; set; }
-        public int PrijsPerStuk { get; set; }
-        public int Totaal { get; set; }
+        public decimal PrijsPerStuk { get; set; }
+        public decimal Totaal { get; set; }
 
-        public KenmerkenProduct (string productNaam, Afdelingen afdeling, int aantal, StukOfKg stukOfGewicht, int prijsPerStuk, int totalePrijs)
+        public KenmerkenProduct (string productNaam, Afdelingen afdeling, decimal aantal, StukOfKg stukOfGewicht, decimal prijsPerStuk, decimal totalePrijs)
         {
             ProductNaam = productNaam;
             Afdeling = afdeling;

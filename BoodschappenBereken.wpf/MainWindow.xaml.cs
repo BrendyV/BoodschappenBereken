@@ -28,7 +28,6 @@ namespace BoodschappenBereken.wpf
         BeherenBoodschappenServices productBeheer;
 
 
-
         public MainWindow()
         {
             InitializeComponent();
@@ -63,10 +62,10 @@ namespace BoodschappenBereken.wpf
         {
             string productNaam = txtProduct.Text;
             Afdelingen afdeling = (Afdelingen)cmbAfdeling.SelectedItem;
-            int aantal = int.Parse(txtAantal.Text.ToString());
+            decimal aantal = decimal.Parse(txtAantal.Text.ToString());
             StukOfKg stukOfKg = (StukOfKg)cmbStukOfKg.SelectedItem;
-            int prijs = int.Parse(txtAantal.Text.ToString());
-            int totalePrijs = int.Parse(lblTotalePrijs.Content.ToString());
+            decimal prijs = decimal.Parse(txtAantal.Text.ToString());
+            decimal totalePrijs = decimal.Parse(lblTotalePrijs.Content.ToString());
 
             KenmerkenProduct kenmerken = new KenmerkenProduct
                 (productNaam, afdeling, aantal, stukOfKg, prijs, totalePrijs);
@@ -140,12 +139,12 @@ namespace BoodschappenBereken.wpf
 
         private void BtnBerekenen_Click(object sender, RoutedEventArgs e)
         {
-            int aantal;
-            int prijsPerStuk;
-            int totalePrijs;
+            decimal aantal;
+            decimal prijsPerStuk;
+            decimal totalePrijs;
 
-            aantal = int.Parse(txtAantal.Text.ToString());
-            prijsPerStuk = int.Parse(txtPrijsStukOfKg.Text.ToString());
+            aantal = decimal.Parse(txtAantal.Text.ToString());
+            prijsPerStuk = decimal.Parse(txtPrijsStukOfKg.Text.ToString());
             
             totalePrijs = aantal * prijsPerStuk;
 
